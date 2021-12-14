@@ -7,13 +7,21 @@
   "scripts": {
     "start": "nodemon index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DmitriyMalayev/rest_api_with_node_express.git"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "express": "^4.17.1"
+  "bugs": {
+    "url": "https://github.com/DmitriyMalayev/rest_api_with_node_express/issues"
   },
+  "homepage": "https://github.com/DmitriyMalayev/rest_api_with_node_express#readme",
   "devDependencies": {
     "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }
