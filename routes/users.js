@@ -6,15 +6,23 @@ const users = [
   {
     firstName: "John",
     lastName: "Doe",
-    age: 25
-  }
-]
+    age: 25,
+  },
+  {
+    firstName: "Jane",
+    lastName: "Doe",
+    age: 24,
+  },
+];
 
-
-router.get('/', (req, res) => {
+router.get("/", (req, res) => {
   console.log(users);
-  res.send("Hello");
+  res.send(users);
 });
+
+router.post("/", (req, res)=> {
+   
+})
 
 export default router;
 // All routes in this file already start with /users
