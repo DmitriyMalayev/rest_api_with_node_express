@@ -3,18 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 
 const router = express.Router();
 
-const users = [
-  {
-    firstName: "John",
-    lastName: "Doe",
-    age: 25,
-  },
-  {
-    firstName: "Jane",
-    lastName: "Doe",
-    age: 24,
-  },
-];
+let users = [];
 
 router.get("/", (req, res) => {
   console.log(users);
@@ -42,7 +31,24 @@ router.get("/:id", (req, res) => {
 
 router.delete("/:id", (req, res) => {
   const { id } = req.params;
-  users.filter((user) => user.id !== id);   //removes what returns false 
+  users.filter((user) => user.id !== id); //removes what returns false
+  res.send(`User with the id ${id} from the database`);
+});
+
+router.patch("/:id", (req, res) => {
+  const { id } = req.params;
+  const { firstName, lastName, age } = req.body;
+  const user = users.find((user) => user.id === id);
+
+  if (firstName) {
+    user.firstName = firstName;
+  }
+  if (lastName) {
+    user.lastName = lastName;
+  }
+  if (age) {
+    user.age = age;
+  }
 });
 export default router;
 // All routes in this file already start with /users
