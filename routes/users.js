@@ -49,6 +49,8 @@ router.patch("/:id", (req, res) => {
   if (age) {
     user.age = age;
   }
+
+  res.send(`User with the id ${id} has been updated`) 
 });
 export default router;
 // All routes in this file already start with /users
